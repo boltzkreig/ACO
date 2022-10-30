@@ -3,10 +3,12 @@ import numpy as np
 import matplotlib.image as img
 
 file=input("ENTER FILE NAME:")
-i = int(input("?"))
+
+color = {"r":0, "g":1, "b":2}
+i = input("r/g/b ?")
 a = img.imread(file)
 b = a.transpose(2,0,1)
-c0= b[i,:,:].astype(float)
+c0= b[color[i],:,:].astype(float)
 
 ants = int(input("Number of Ants:"))
 interation = int(input("Interation:"))
@@ -22,5 +24,5 @@ e0 = d0.reshape(sh[0],sh[1])
 f0 = np.array([e0,e0,e0])
 f0 = f0.transpose(1,2,0)
 
-name = file.replace(".png","") + "(" + str(ants) + "," + str(interation) + "," +str(neighbour) + "," + str(sensitivity) + ")_edges.png"
+name = file.replace(".png","") + "(" + str(ants) + "," + str(interation) + "," + str(neighbour) + "," + str(sensitivity) + i +")_" + i + "_edges.png"
 img.imsave(name, f0)
