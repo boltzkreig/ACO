@@ -23,8 +23,10 @@
 ![Original Image](tiger.png) ![Edge Dectection when Neighbour:5 and Sensitivity:0.1 and Ants and Iterations increase](tiger.gif)
 
 Variation when Neighbour value changes from 3 to 5
+
 ![tiger(1000,50000,3,0.1)](tiger(1000,50000,3,0.1)_edges.png) ![tiger(1000,50000,5,0.1)](tiger(1000,50000,5,0.1)_edges.png)
 
 Edges in Backdrop detected with higher sensitivity at the cost of noise in foreground
+
 ![tiger(1000,50000,3,0.01)](tiger(1000,50000,3,0.01)_edges.png)
 
