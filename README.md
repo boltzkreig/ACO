@@ -35,7 +35,7 @@ Edges in Backdrop detected with higher sensitivity at the cost of noise in foreg
 The `raco` used on Red Color Stream to detect Edges
 ![tiger(1000,25000,3,0.075)_r_edges](tiger(1000,25000,3,0.075)_r_edges.png)
 
-[^notes]:
 
+[^notes]:
 - Currently only accepts `.png`.
 - Requires Pre-processing and Post-processing _Python_ files give a footprint of usage.
