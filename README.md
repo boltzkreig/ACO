@@ -1,6 +1,6 @@
 # ABOUT
 
-Implementation of Ant Colony Optimization for edge detection as a Numpy-dependent python library using Numpy-API.[^notes]
+Implementation of Ant Colony Optimization for edge detection as a Numpy-dependent python library using Numpy-API.\
 It has the following Methods:
 
 - **a**co : It is used to detect edges based upon the Difference of **A**bsolute Value with adjacent positions.
@@ -27,15 +27,16 @@ It has the following Methods:
 ![Original Image](tiger.png) ![Edge Dectection when Neighbour:5 and Sensitivity:0.1 and Ants and Iterations increase](tiger.gif)
 
 Variation when Neighbour value changes from 3 to 5
+
 ![tiger(1000,50000,3,0.1)](tiger(1000,50000,3,0.1)_edges.png) ![tiger(1000,50000,5,0.1)](tiger(1000,50000,5,0.1)_edges.png)
 
-Edges in Backdrop detected with higher sensitivity at the cost of noise in foreground
-![tiger(1000,50000,3,0.01)](tiger(1000,50000,3,0.01)_edges.png)
+Edges in Backdrop detected with higher sensitivity at the cost of noise in foreground\
+And the `raco` used on Red Color Stream to detect Edges respectively.
 
-The `raco` used on Red Color Stream to detect Edges
+![tiger(1000,50000,3,0.01)](tiger(1000,50000,3,0.01)_edges.png)
 ![tiger(1000,25000,3,0.075)_r_edges](tiger(1000,25000,3,0.075)_r_edges.png)
 
 
-[^notes]:
-- Currently only accepts `.png`.
-- Requires Pre-processing and Post-processing _Python_ files give a footprint of usage.
+<br><br><hr>**NOTES**
+  1. Currently only accepts PNG
+  2. Requires Pre-processing and Post-processing Python files give a footprint of usage.
