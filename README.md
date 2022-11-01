@@ -1,4 +1,5 @@
-# ABOUT
+ACO
+===================
 
 Implementation of Ant Colony Optimization for edge detection as a Numpy-dependent python library using Numpy-API.\
 It has the following Methods:
