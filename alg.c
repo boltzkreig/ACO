@@ -29,16 +29,40 @@ PyObject *ACO(PyObject *self, PyObject *args){
 	//c-arr must be freed but don't know how
 	return result;
 }
+PyObject *RACO(PyObject *self, PyObject *args){
+	PyArrayObject  *arr;
+	int ants, iter, neig;
+	double sens;
+
+	PyArg_ParseTuple(args, "Oiiid", &arr, &ants, &iter, &neig, &sens);
+	if(PyErr_Occurred()){printf("Parse Error\n");return NULL;}
+
+	double *data		= PyArray_DATA(arr);
+	long *shape			= PyArray_SHAPE(arr);
+	int size			= PyArray_SIZE(arr);
+	long si_ze[]		= { [0] = size };
+	int dim				= PyArray_NDIM(arr);
+	PyObject *result	= PyArray_SimpleNew(1,si_ze ,NPY_DOUBLE);
+	double *result_data = PyArray_DATA((PyArrayObject*)result);
+	//the next line will do what ever it does
+	double *inter_data	= rel_optimize(data, shape, size, ants, iter, neig, sens);
+	for (int i =0;i < size; ++i){
+		result_data[i]	= inter_data[i];
+	}
+	//c-arr must be freed but don't know how
+	return result;
+}
 /*****************************ALL METHODS*************************************/
 static PyMethodDef methods[] = {
-	{ "aco", ACO, METH_VARARGS, "does something for sure" },
+	{ "aco", ACO, METH_VARARGS, "Takes an absolute value difference approach to detect edge" },
+	{ "raco", RACO, METH_VARARGS, "Takes a relative value difference approach to detect edge" },
 	{ NULL, NULL, 0, NULL }
 };
 /*********ABSOLUTELY BOILER-PLATE DON'T TRY TO CHANGE ANYTHING BELOW**********/
 static struct PyModuleDef alg = {
 	PyModuleDef_HEAD_INIT,
 	"alg",
-	"This is supposed to do ACO Iterations",
+	"This is supposed to do ACO Iterations for Edge Dectection",
 	-1,
 	methods
 };
